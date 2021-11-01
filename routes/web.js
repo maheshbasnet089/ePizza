@@ -1,7 +1,6 @@
+const homeController = require("../app/http/controllers/homeController");
 function initRoute(app) {
-  app.get("/", (req, res) => {
-    res.render("home");
-  });
+  app.get("/", homeController().index);
 }
 
 module.exports = initRoute;
