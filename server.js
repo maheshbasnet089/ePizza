@@ -19,8 +19,13 @@ mongoose
     console.log(err);
   });
 
+// Assets
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 //view engine setup
-// app.use(expressLayout);
+app.use(expressLayout);
 app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 
