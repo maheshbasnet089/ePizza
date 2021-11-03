@@ -7,7 +7,6 @@ body {
 nav li:last-child a {
   background: #fe5f1e;
 }
-
 nav li:last-child a:hover {
   background: #b23301;
 }
@@ -15,13 +14,12 @@ nav li:last-child a:hover {
 nav li a {
   transition: all 0.3s ease-in-out;
 }
-
 nav li a:hover {
   color: #fe5f1e;
 }
 
 section.hero {
-  background: #f8f8f8;
+  background: blue;
 }
 
 .size {
@@ -33,13 +31,11 @@ section.hero {
   color: #fe5f1e;
   transition: all 0.3s ease-in-out;
 }
-
 .add-to-cart:hover {
   background: #fe5f1e;
   border-color: #fff;
   color: #fff;
 }
-
 .add-to-cart:focus {
   outline: none;
 }
@@ -48,7 +44,6 @@ section.hero {
   background: #fe5f1e;
   transition: all 0.3s ease-in-out;
 }
-
 .btn-primary:hover {
   background: #b23301;
 }
@@ -56,7 +51,6 @@ section.hero {
 section.cart {
   background: #f8f8f8;
 }
-
 section.cart .amount {
   color: #fe5f1e;
 }
@@ -65,11 +59,9 @@ section.login {
   background: #f8f8f8;
   min-height: calc(100vh - 86px);
 }
-
 section.login a {
   color: #fe5f1e;
 }
-
 section.login a:hover {
   color: #b23301;
 }
@@ -126,23 +118,23 @@ section.status {
 }
 
 .status-box ul li:nth-child(1) span:before {
-  content: "\F46C";
+  content: "\f46c";
 }
 
 .status-box ul li:nth-child(2) span:before {
-  content: "\F560";
+  content: "\f560";
 }
 
 .status-box ul li:nth-child(3) span:before {
-  content: "\F818";
+  content: "\f818";
 }
 
 .status-box ul li:nth-child(4) span:before {
-  content: "\F0D1";
+  content: "\f0d1";
 }
 
 .status-box ul li:nth-child(5) span:before {
-  content: "\F582";
+  content: "\f582";
 }
 
 .status-box ul li {
@@ -201,13 +193,11 @@ section.status {
     white-space: nowrap;
   }
 }
-
 @media (max-width: 768px) {
   .status-box ul li span:before {
     font-size: 34px;
   }
 }
-
 .StripeElement {
   box-sizing: border-box;
   width: 50%;
@@ -232,4 +222,3 @@ section.status {
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
-
