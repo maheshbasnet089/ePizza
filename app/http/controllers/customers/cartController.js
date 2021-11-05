@@ -14,8 +14,6 @@ function cartController() {
       //     totalPrice: 0
       // }
       // for the first time creating cart and adding basic object structure
-      console.log(req.session.cart.items[req.body._id]);
-      console.log(req.session.cart);
       if (!req.session.cart) {
         req.session.cart = {
           items: {},

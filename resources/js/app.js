@@ -2,10 +2,11 @@ import axios from "axios";
 import Noty from "noty";
 
 let addToCart = document.querySelectorAll(".add-to-cart");
+let cartCounter = document.querySelector("#cartCounter");
 
 function updateCart(pizza) {
   axios
-    .post("/update-carts", pizza)
+    .post("/update-cart", pizza)
     .then((res) => {
       cartCounter.innerText = res.data.totalQty;
       new Noty({
@@ -16,13 +17,13 @@ function updateCart(pizza) {
       }).show();
     })
     .catch((err) => {
-      console.log(err);
       new Noty({
         type: "error",
         timeout: 1000,
-        text: "Something went wrong",
+        text: "Something Went Wrong",
         progressBar: false,
       }).show();
+      console.log(err);
     });
 }
 
