@@ -2161,11 +2161,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_1__);
 
 
-console.log((noty__WEBPACK_IMPORTED_MODULE_1___default()));
 var addToCart = document.querySelectorAll(".add-to-cart");
 
 function updateCart(pizza) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-cart", pizza).then(function (res) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-carts", pizza).then(function (res) {
     cartCounter.innerText = res.data.totalQty;
     new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
       type: "success",
@@ -2174,6 +2173,7 @@ function updateCart(pizza) {
       progressBar: false
     }).show();
   })["catch"](function (err) {
+    console.log(err);
     new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
       type: "error",
       timeout: 1000,

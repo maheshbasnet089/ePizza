@@ -23,7 +23,8 @@
     "express-session": "^1.17.2",
     "flash": "^1.1.0",
     "mongoose": "^6.0.12",
-    "noty": "^3.2.0-beta-deprecated"
+    "noty": "^3.2.0-beta-deprecated",
+    "notyf": "^3.10.0"
   },
   "laravel-mix": "^6.0.37",
   "nodemon": "^2.0.14",

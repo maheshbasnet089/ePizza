@@ -1,12 +1,11 @@
 import axios from "axios";
 import Noty from "noty";
 
-console.log(Noty);
 let addToCart = document.querySelectorAll(".add-to-cart");
 
 function updateCart(pizza) {
   axios
-    .post("/update-cart", pizza)
+    .post("/update-carts", pizza)
     .then((res) => {
       cartCounter.innerText = res.data.totalQty;
       new Noty({
@@ -17,6 +16,7 @@ function updateCart(pizza) {
       }).show();
     })
     .catch((err) => {
+      console.log(err);
       new Noty({
         type: "error",
         timeout: 1000,
