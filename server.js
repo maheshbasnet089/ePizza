@@ -2,8 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const ejs = require("ejs");
+//for layouting or importing navbar in every views page
 const expressLayout = require("express-ejs-layouts");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const flash = require("flash");
+const MongoDbStore = require("connect-mongo");
 require("dotenv").config();
 
 // Database connection
@@ -18,6 +22,22 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+//session config
+app.use(
+  session({
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    store: MongoDbStore.create({
+      mongoUrl: process.env.MONGO_CONNECTION_URL,
+      collectionName: "sessions",
+    }),
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hour
+  })
+);
+
+app.use(flash());
 
 // Assets
 app.use(express.static("public"));

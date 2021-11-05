@@ -13,19 +13,22 @@
   },
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.24.0",
+    "connect-mongo": "^4.6.0",
     "cross-env": "7.0.2",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.1",
-    "mongoose": "^6.0.12"
+    "express-session": "^1.17.2",
+    "flash": "^1.1.0",
+    "mongoose": "^6.0.12",
+    "noty": "^3.2.0-beta-deprecated"
   },
-  "devDependencies": {
-    "laravel-mix": "^6.0.37",
-    "nodemon": "^2.0.14",
-    "resolve-url-loader": "^3.1.0",
-    "sass": "^1.43.4",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.14"
-  }
+  "laravel-mix": "^6.0.37",
+  "nodemon": "^2.0.14",
+  "resolve-url-loader": "^3.1.0",
+  "sass": "^1.43.4",
+  "sass-loader": "^8.0.2",
+  "vue-template-compiler": "^2.6.14"
 }
