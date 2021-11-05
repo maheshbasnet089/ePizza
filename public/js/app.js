@@ -2167,7 +2167,6 @@ var cartCounter = document.querySelector("#cartCounter");
 function updateCart(pizza) {
   axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-cart", pizza).then(function (res) {
     cartCounter.innerText = res.data.totalQty;
-    console.log(res);
     new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
       type: "success",
       timeout: 1000,
