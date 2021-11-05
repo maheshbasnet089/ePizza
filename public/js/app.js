@@ -2161,16 +2161,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_1__);
 
 
+console.log((noty__WEBPACK_IMPORTED_MODULE_1___default()));
 var addToCart = document.querySelectorAll(".add-to-cart");
+
+function updateCart(pizza) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-cart", pizza).then(function (res) {
+    cartCounter.innerText = res.data.totalQty;
+    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+      type: "success",
+      timeout: 1000,
+      text: "Item added to cart",
+      progressBar: false
+    }).show();
+  })["catch"](function (err) {
+    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+      type: "error",
+      timeout: 1000,
+      text: "Something went wrong",
+      progressBar: false
+    }).show();
+  });
+}
+
 addToCart.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     var pizza = JSON.parse(btn.dataset.pizza);
     console.log(pizza);
+    updateCart(pizza);
   });
-}); // btn.addEventListener("click", (e) => {
-//   let pizza = JSON.parse(btn.dataset.pizza);
-//   console.log(pizza);
-// });
+});
 
 /***/ }),
 
