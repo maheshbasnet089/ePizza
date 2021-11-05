@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-const path = require("path");
 const ejs = require("ejs");
+const path = require("path");
+
 //for layouting or importing navbar in every views page
 const expressLayout = require("express-ejs-layouts");
 const mongoose = require("mongoose");
