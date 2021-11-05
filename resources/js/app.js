@@ -9,6 +9,7 @@ function updateCart(pizza) {
     .post("/update-cart", pizza)
     .then((res) => {
       cartCounter.innerText = res.data.totalQty;
+      console.log(res);
       new Noty({
         type: "success",
         timeout: 1000,
