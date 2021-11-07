@@ -10,6 +10,7 @@ const session = require("express-session");
 const flash = require("express-flash");
 const MongoDbStore = require("connect-mongo");
 require("dotenv").config();
+const passport = require("passport");
 
 // Database connection
 mongoose
@@ -38,9 +39,16 @@ app.use(
   })
 );
 
+//passport config
+const passportInit = require("./app/config/passport");
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 //global middleware
 app.use((req, res, next) => {
   res.locals.session = req.session;
+  console.log(req.user);
+  res.locals.user = req.user;
   next();
 });
 

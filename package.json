@@ -26,7 +26,9 @@
     "flash": "^1.1.0",
     "mongoose": "^6.0.12",
     "noty": "^3.2.0-beta-deprecated",
-    "notyf": "^3.10.0"
+    "notyf": "^3.10.0",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "laravel-mix": "^6.0.37",
