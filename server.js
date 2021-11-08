@@ -47,7 +47,6 @@ app.use(passport.session());
 //global middleware
 app.use((req, res, next) => {
   res.locals.session = req.session;
-  console.log(req.user);
   res.locals.user = req.user;
   next();
 });

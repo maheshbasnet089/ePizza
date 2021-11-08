@@ -2,9 +2,9 @@ const User = require("../../models/user");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 function authController() {
-  // const _getRedirectUrl = (req) => {
-  //   return req.user.role === "admin" ? "/admin/orders" : "/customer/orders";
-  // };
+  const _getRedirectUrl = (req) => {
+    return req.user.role === "admin" ? "/admin/orders" : "/customer/orders";
+  };
 
   return {
     login(req, res) {
@@ -32,7 +32,7 @@ function authController() {
             return next(err);
           }
 
-          return res.redirect("/");
+          return res.redirect(_getRedirectUrl(req));
         });
       })(req, res, next);
     },
@@ -78,18 +78,18 @@ function authController() {
       //     req.flash("error", "Something went wrong");
       //     console.log(err);
       //   });
-      user.save(function(err){
-        if(err){
-          console.log(err)
-        }else{
-          req.login(user,function(err){
-            if(err){
-              console.log(err)
+      user.save(function (err) {
+        if (err) {
+          console.log(err);
+        } else {
+          req.login(user, function (err) {
+            if (err) {
+              console.log(err);
             }
-            return res.redirect('/')
-          })
+            return res.redirect("/");
+          });
         }
-      })
+      });
     },
     logout(req, res) {
       req.logout();
