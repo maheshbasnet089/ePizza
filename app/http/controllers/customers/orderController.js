@@ -37,7 +37,18 @@ function orderController() {
         "Cache-Control",
         "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0"
       );
-      res.render("customers/orders", { orders: orders, moment: moment });
+      res.render("customers/orders", { orders, moment });
+    },
+    async show(req, res) {
+      try {
+        const order = await Order.findById(req.params.id);
+        // Authorize user
+        if (req.user._id.toString() === order.customerId.toString()) {
+          return res.render("customers/singlePageOrder", { order });
+        }
+      } catch (e) {
+        res.redirect("/");
+      }
     },
   };
 }
