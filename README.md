@@ -30,8 +30,8 @@ ePizza, is an online platform to order pizza and avoiding the hassle of going ou
  - [Node.js](https://nodejs.org/en/)
  - [Express.js](https://expressjs.com/)
  - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
- - [Sass] (https://sass-lang.com/documentation/syntax)
- - [Ejs] (https://ejs.co/)
+ - [Sass](https://sass-lang.com/documentation/syntax)
+ - [Ejs](https://ejs.co/)
  - [Socket](https://socket.io/)
 
 ## Installation :zap:
@@ -63,5 +63,4 @@ ePizza, is an online platform to order pizza and avoiding the hassle of going ou
  
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 
