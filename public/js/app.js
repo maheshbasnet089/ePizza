@@ -2316,7 +2316,6 @@ if (order) {
 }
 
 var adminAreaPath = window.location.pathname;
-console.log(adminAreaPath);
 
 if (adminAreaPath.includes("admin")) {
   socket.emit("join", "adminRoom");
