@@ -52,7 +52,7 @@ ePizza, is an online platform to order pizza and avoiding the hassle of going ou
  ```
  **3. Create a `.env` file in the project root folder and copy the format of `.env.example` file.**
 
-   - `.env.sample` file contains all the environment variables required for running the project.
+   - `.env.example` file contains all the environment variables required for running the project.
    
    
  **4.** **🎉  Open your browser and go to  `https://localhost:3000`**
