@@ -22,17 +22,15 @@ function updateCart(pizza) {
       new Noty({
         type: "error",
         timeout: 1000,
-        text: "Something Went Wrong",
+        text: "Something went wrong",
         progressBar: false,
       }).show();
-      console.log(err);
     });
 }
 
 addToCart.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     let pizza = JSON.parse(btn.dataset.pizza);
-    console.log(pizza);
     updateCart(pizza);
   });
 });
@@ -45,9 +43,6 @@ if (alertMsg) {
   }, 2000);
 }
 
-initAdmin();
-
-//change order status
 // Change order status
 let statuses = document.querySelectorAll(".status_line");
 let hiddenInput = document.querySelector("#hiddenInput");
@@ -78,3 +73,29 @@ function updateStatus(order) {
 }
 
 updateStatus(order);
+
+// Socket
+let socket = io();
+initAdmin(socket);
+// Join
+if (order) {
+  socket.emit("join", `order_${order._id}`);
+}
+let adminAreaPath = window.location.pathname;
+console.log(adminAreaPath);
+if (adminAreaPath.includes("admin")) {
+  socket.emit("join", "adminRoom");
+}
+
+socket.on("orderUpdated", (data) => {
+  const updatedOrder = { ...order };
+  updatedOrder.updatedAt = moment().format();
+  updatedOrder.status = data.status;
+  updateStatus(updatedOrder);
+  new Noty({
+    type: "success",
+    timeout: 1000,
+    text: "Order updated",
+    progressBar: false,
+  }).show();
+});

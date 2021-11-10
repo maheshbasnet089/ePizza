@@ -29,7 +29,8 @@
     "noty": "^3.2.0-beta-deprecated",
     "notyf": "^3.10.0",
     "passport": "^0.5.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.3.2"
   },
   "devDependencies": {
     "laravel-mix": "^6.0.37",
