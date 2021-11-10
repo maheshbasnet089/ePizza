@@ -22,9 +22,8 @@ ePizza, is an online platform to order pizza and avoiding the hassle of going ou
  
  - Update status at realTime
  
- **More features To Come ** 
+ **More features To Come** 
 
- ## Screenshots
  
 ## Tech Stack 💻
 
